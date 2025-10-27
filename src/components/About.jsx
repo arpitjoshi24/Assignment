@@ -8,7 +8,7 @@ const About = () => {
     switch (activeTab) {
       case "About Me":
         return (
-          <p className="leading-relaxed sales-text">
+          <p className="leading-relaxed text-sm sm:text-base text-gray-300">
             Hello! I’m Dave, your sales rep here from Salesforce. I’ve been
             working at this awesome company for 3 years now. <br />
             I was born and raised in Albany, NY & have been living in Santa
@@ -21,7 +21,7 @@ const About = () => {
         );
       case "Experiences":
         return (
-          <p className="leading-relaxed sales-text">
+          <p className="leading-relaxed text-sm sm:text-base text-gray-300">
             Experienced in client relationship management, sales strategy,
             product training, and customer success. Proven record of increasing
             user engagement and closing high-value deals.
@@ -29,7 +29,7 @@ const About = () => {
         );
       case "Recommended":
         return (
-          <p className="leading-relaxed sales-text">
+          <p className="leading-relaxed text-sm sm:text-base text-gray-300">
             Highly recommended by team members for problem-solving skills, clean
             code, and UI precision. Always ensures responsiveness and
             performance optimization.
@@ -41,22 +41,22 @@ const About = () => {
   };
 
   return (
-    <div className="bg-[#2b303b] rounded-2xl flex p-2">
-      {/* Sidebar */}
-      <div className="flex flex-col mt-3 items-center gap-40">
-        <MessageCircleQuestionMark className="text-[#5C6168]" />
-        <GripVertical className="text-[#5C6168]" />
+    <div className="bg-[#2b303b] rounded-2xl flex p-3 sm:p-4 shadow-md flex-col sm:flex-row gap-3 sm:gap-4">
+      {/* Sidebar (icon stack on larger screens) */}
+      <div className="flex flex-row sm:flex-col justify-between sm:justify-start sm:gap-32 items-center text-[#5C6168]">
+        <MessageCircleQuestionMark size={20} />
+        <GripVertical className="hidden sm:block" size={20} />
       </div>
 
       {/* Main Card */}
-      <div className="bg-[#2b303b] rounded-2xl p-4 shadow-lg min-h-[340px] flex flex-col w-full">
+      <div className="bg-[#2b303b] rounded-2xl p-4 sm:p-5 shadow-lg min-h-[300px] sm:min-h-[340px] flex flex-col w-full">
         {/* Tabs */}
-        <div className="flex bg-[#1f2433] rounded-2xl sales-text text-2xl p-1 mb-4">
+        <div className="flex bg-[#1f2433] rounded-2xl text-sm sm:text-base p-1 mb-4">
           {["About Me", "Experiences", "Recommended"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 text-sm py-2 rounded-2xl transition-all ${
+              className={`flex-1 py-2 rounded-2xl transition-all ${
                 activeTab === tab
                   ? "bg-[#3b465a] text-white font-semibold shadow-inner"
                   : "text-gray-400 hover:text-white"
@@ -68,7 +68,7 @@ const About = () => {
         </div>
 
         {/* Scrollable Content */}
-        <div className="p-2 rounded-xl shadow-inner overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent max-h-[180px]">
+        <div className="p-2 rounded-xl shadow-inner overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent max-h-[180px] sm:max-h-[200px]">
           {renderContent()}
         </div>
       </div>
