@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* Optional: Thin scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+.sales-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: #8d8e90; /* soft gray text */
+  font-weight: 400;
+}
+
+.sales-text + .sales-text {
+  margin-top: 1rem; /* space between paragraphs */
+}
